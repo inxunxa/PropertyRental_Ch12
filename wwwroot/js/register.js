@@ -9,7 +9,7 @@ function Property(title, bedrooms, bathrooms, price, area, imageUrl, description
   this.parking = parking;
 }
 
-function saveProperty() {  
+function saveProperty() {
   // Get values into vars
   var title = $("#txtTitle").val();
   var beds = parseInt($("#txtBedrooms").val());
@@ -21,14 +21,23 @@ function saveProperty() {
   var parking = $("#radio_0").is(":checked");
 
   // data validations
-  if(!price || !area || !beds || !baths) {
+  if (!price || !area || !beds || !baths) {
     alert("Error, verify your data");
-    return; 
+    return;
   }
 
   // create an object
-  var prop = new Property(title, beds, baths, price, area, imageUrl, description, parking);
-  console.log(prop); 
+  var prop = new Property(
+    title,
+    beds,
+    baths,
+    price,
+    area,
+    imageUrl,
+    description,
+    parking
+  );
+  console.log(prop);
 
   // send the object to BE
   $.ajax({
@@ -39,8 +48,8 @@ function saveProperty() {
     success: (res) => {
       console.log(res);
 
-       // clear the form
-      $(".form-control").val('');
+      // clear the form
+      $(".form-control").val("");
 
       // show a message
     },
@@ -48,9 +57,8 @@ function saveProperty() {
       console.log("Error", details);
 
       // show an error
-    }
+    },
   });
-
 }
 
 function init() {
@@ -61,6 +69,3 @@ function init() {
 }
 
 window.onload = init;
-
-// Git
-// Vs code git extension
