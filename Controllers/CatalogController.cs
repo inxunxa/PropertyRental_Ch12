@@ -8,12 +8,12 @@ namespace PropertyRental.Controllers
     {
         public IActionResult Index() 
         {
-            return View(); // catalog page
+            return View();
         }
 
         public IActionResult Register() 
         {
-            return View(); // register page
+            return View();
         }
 
 
@@ -24,13 +24,8 @@ namespace PropertyRental.Controllers
             System.Console.WriteLine("Saving a property");
             System.Console.WriteLine(theProperty.Title);
 
-    	    // temp
             theProperty.Id = 1;
             return Json(theProperty);
         }
-
-
-
-
     }
 }
